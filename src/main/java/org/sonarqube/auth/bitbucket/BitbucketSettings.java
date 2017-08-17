@@ -37,6 +37,7 @@ public class BitbucketSettings {
   public static final String CONSUMER_SECRET = "sonar.auth.bitbucket.clientSecret.secured";
   public static final String ENABLED = "sonar.auth.bitbucket.enabled";
   public static final String ALLOW_USERS_TO_SIGN_UP = "sonar.auth.bitbucket.allowUsersToSignUp";
+  public static final String ALLOW_EMAIL_DOMAINS = "sonar.auth.bitbucket.allowedEmailDomains";
   // URLs are not configurable yet
   public static final String API_URL = "sonar.auth.bitbucket.apiUrl";
   public static final String DEFAULT_API_URL = "https://api.bitbucket.org/";
@@ -75,6 +76,10 @@ public class BitbucketSettings {
 
   public String loginStrategy() {
     return settings.getString(LOGIN_STRATEGY);
+  }
+  
+  public String allowedEmailDomains() {
+    return settings.getString(ALLOW_EMAIL_DOMAINS);
   }
 
   public String webURL() {
